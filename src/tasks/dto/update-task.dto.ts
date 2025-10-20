@@ -1,4 +1,4 @@
-import { IsOptional, IsBoolean } from 'class-validator';
+import { IsOptional, IsBoolean, IsUrl } from 'class-validator';
 
 export class UpdateTaskDto {
   @IsOptional()
@@ -6,6 +6,10 @@ export class UpdateTaskDto {
 
   @IsOptional()
   description?: string;
+
+  @IsOptional()
+  @IsUrl()
+  imageUrl?: string;
 
   @IsOptional()
   @IsBoolean()

@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsOptional, IsBoolean } from 'class-validator';
+import { IsNotEmpty, IsOptional, IsBoolean, IsUrl } from 'class-validator';
 
 export class CreateTaskDto {
   @IsNotEmpty()
@@ -6,6 +6,10 @@ export class CreateTaskDto {
 
   @IsOptional()
   description?: string;
+
+  @IsOptional()
+  @IsUrl()
+  imageUrl?: string;
 
   @IsOptional()
   @IsBoolean()
